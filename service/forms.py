@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 
-from base.models import ACTIVITY_CHOICES
+from main.models import ACTIVITY_CHOICES
 from .models import Service
 
 

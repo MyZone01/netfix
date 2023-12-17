@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 from django.forms import ValidationError
-from base.models import AppUser
+from main.models import AppUser
 from service.models import Service
 from datetime import datetime
 

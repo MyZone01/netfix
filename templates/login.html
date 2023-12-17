@@ -1,10 +1,13 @@
-{% extends 'index.html' %} {% block content %}
-<h1>Login Page</h1>
-<div>
-  <form method="POST" action="{% url 'login' %}">
-    {% csrf_token %} {{ form.as_p }}
-
-    <input type="submit" value="Login" />
-  </form>
-</div>
+{% extends './layouts/main.html' %}
+{% block content %}
+  <aside>
+    <img src="/static/img/banner.jpg" alt="" class="cover" />
+  </aside>
+  <main>
+    <h1>Login Page</h1>
+    <form method="POST" action="{% url 'login' %}">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Register</button>
+    </form>
+  </main>
 {% endblock %}

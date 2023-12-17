@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from base.views import convert_services_choices_to_verbose_names
+from main.views import convert_services_choices_to_verbose_names
 from service.models import Service
 from .forms import ServiceForm
 from django.db.models import Count, Max

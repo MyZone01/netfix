@@ -1,7 +1,7 @@
 from django import forms
 from django.utils import timezone
 from django.contrib.auth.forms import UserCreationForm
-from base.models import AppUser
+from main.models import AppUser
 
 
 ACTIVITY_CHOICES_FORM = [
@@ -23,9 +23,10 @@ ACTIVITY_CHOICES_FORM = [
 
 class CompanyCreationForm(UserCreationForm):
     # add new unique fields to built-in UserCreationForm
-    email = forms.EmailField(required=True)
+    email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'placeholder': 'Enter your email'}))
     field_of_work = forms.ChoiceField(
-        required=True, choices=ACTIVITY_CHOICES_FORM, initial='ALL_IN_ONE')
+        required=True, choices=ACTIVITY_CHOICES_FORM,
+         initial='ALL_IN_ONE')
 
     class Meta:
         # this model will be used to create the form based on fields of model
@@ -38,7 +39,9 @@ class CompanyCreationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # set autofocus on username field when page is loaded
-        self.fields['username'].widget.attrs.update({'autofocus': 'autofocus'})
+        self.fields['username'].widget.attrs.update({'autofocus': 'autofocus', 'placeholder': 'Enter your username'})
+        self.fields['password1'].widget.attrs.update({'placeholder': 'Enter your password'})
+        self.fields['password2'].widget.attrs.update({'placeholder': 'Confirm your password'})
 
     def clean_username(self):
         username = self.cleaned_data['username']
@@ -65,9 +68,9 @@ class CompanyCreationForm(UserCreationForm):
 
 
 class CustomerCreationForm(UserCreationForm):
-    email = forms.EmailField(required=True)
+    email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'placeholder': 'Enter your email'}))
     date_of_birth = forms.DateField(
-        required=True, widget=forms.DateInput(attrs={'type': 'date'}))
+        required=True, widget=forms.DateInput(attrs={'type': 'date', 'placeholder': 'Enter date of birth'}))
 
     class Meta:
         model = AppUser
@@ -76,7 +79,9 @@ class CustomerCreationForm(UserCreationForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['username'].widget.attrs.update({'autofocus': 'autofocus'})
+        self.fields['username'].widget.attrs.update({'autofocus': 'autofocus', 'placeholder': 'Enter your username'})
+        self.fields['password1'].widget.attrs.update({'placeholder': 'Enter your password'})
+        self.fields['password2'].widget.attrs.update({'placeholder': 'Confirm your password'})
 
     def clean_username(self):
         username = self.cleaned_data['username']
@@ -101,9 +106,8 @@ class CustomerCreationForm(UserCreationForm):
 
 # make userloginform using email+ password instead of username + password
 class UserLoginForm(forms.Form):
-    email = forms.EmailField(label='Email')
-    password = forms.CharField(
-        label='Password', widget=forms.PasswordInput)
+    email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'placeholder': 'Enter your mail'}))
+    password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'placeholder': 'Enter your password'}))
 
     class Meta:
         model = AppUser

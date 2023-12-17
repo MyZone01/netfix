@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from base.models import AppUser
-from base.views import convert_bookings_choices_to_verbose_names, convert_services_choices_to_verbose_names, convert_one_choice_to_verbose_name
+from main.models import AppUser
+from main.views import convert_bookings_choices_to_verbose_names, convert_services_choices_to_verbose_names, convert_one_choice_to_verbose_name
 
 from bookings.models import Bookings
 from service.models import Service

@@ -40,10 +40,10 @@ class AppUser(AbstractUser):
 
     # set the field "email" as unique identifier. Will be used for authentication
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['username']
 
     class Meta:
-        app_label = 'base'
+        app_label = 'main'
 
     def __str__(self):
         return self.email

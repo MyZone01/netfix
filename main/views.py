@@ -2,9 +2,9 @@ from django.contrib import messages
 from django.forms import ValidationError
 from django.shortcuts import redirect, render
 from django.urls import reverse
-from base.forms import CompanyCreationForm, CustomerCreationForm, UserLoginForm
+from main.forms import CompanyCreationForm, CustomerCreationForm, UserLoginForm
 from django.contrib.auth import authenticate, login, logout
-from base.models import AppUser
+from main.models import AppUser
 from service.models import Service
 
 # Create your views here.

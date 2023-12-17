@@ -20,22 +20,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0!5vl5_sj$wc=bjotl4agr1+@d5hhm)u(#7l7)8#e3n6(q^r0+'
+SECRET_KEY = '4fd1a85ad9024512db9c319d389c0bbfa9ff82e67f7b0d996e43'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = 'base.AppUser'
+AUTH_USER_MODEL = 'main.AppUser'
 
 AUTHENTICATION_BACKENDS = [
-    'base.backend.EmailBackend',
+    'main.backend.EmailBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,8 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    "base",
-    "userpage",
+    "main",
+    "user",
     "service",
     "bookings",
 ]
@@ -129,13 +128,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-MEDIA_URL = '/images/'
+STATIC_ROOT = '../static/'
+MEDIA_URL = '/img/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
-MEDIA_ROOT = BASE_DIR / 'static/images'
+MEDIA_ROOT = BASE_DIR / 'static/img'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

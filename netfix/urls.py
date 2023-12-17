@@ -21,8 +21,8 @@ urlpatterns = [
     # built-in admin panel, not used at the moment.
     # Allows to manipulate with models in built-in admin panel
     path('admin/', admin.site.urls),
-    path('', include('base.urls')),
-    path('profile/', include('userpage.urls')),
+    path('', include('main.urls')),
+    path('profile/', include('user.urls')),
     path('services/', include('service.urls')),
     path('bookings/', include('bookings.urls')),
 ]

@@ -1,6 +1,6 @@
 from django.db import models
 
-from base.models import ACTIVITY_CHOICES, AppUser
+from main.models import ACTIVITY_CHOICES, AppUser
 
 # Create your models here.
 

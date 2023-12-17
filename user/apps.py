@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class UserpageConfig(AppConfig):
+class userConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'userpage'
+    name = 'user'

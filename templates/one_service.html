@@ -1,4 +1,5 @@
-{% extends 'index.html' %} {% block content %}
+{% extends './layouts/main.html' %}
+{% block content %}
 <h1>One Service Page</h1>
 {% comment %}
 The "service.company_username.username" will be the view function incoming argument.
@@ -8,7 +9,7 @@ for the view function "def public_profile(request, username):"
 {% endcomment %}
 <p>company: <a href="{% url 'public_profile' service.company_username.username %}">{{ service.company_username.username|slice:":98"|truncatechars:100 }} </a> </p>
 <p>field of work: {{ service.company_username.field_of_work }}</p>
-<hr>
+
 <p>service: {{ service.name|slice:":98"|truncatechars:100 }}</p>
 <p>field: {{ service.field }}</p>
 <p>description: {{ service.description|slice:":298"|truncatechars:300 }}</p>
