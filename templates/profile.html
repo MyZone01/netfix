@@ -1,16 +1,20 @@
 {% extends './layouts/main.html' %}
 {% block content %}
-  <h1>Profile Page</h1>
+  <h1 class="profile">Profile Page</h1>
   {% if user.field_of_work == 'CUSTOMER' %}
-    <p>Name: {{ user.username|slice:':98'|truncatechars:100 }}</p>
-    <p>Email: {{ user.email }}</p>
-    <p>Activity: {{ user.field_of_work }}</p>
-    <p>Date of birth: {{ user.date_of_birth }}</p>
+    <div class="profile_infos">
+      <p>Name: {{ user.username|slice:':98'|truncatechars:100 }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Activity: {{ user.field_of_work }}</p>
+      <p>Date of birth: {{ user.date_of_birth }}</p>
+    </div>
   {% else %}
-    <p>Company: {{ user.username|slice:':98'|truncatechars:100 }}</p>
-    <p>Email: {{ user.email }}</p>
-    <p>Activity: {{ user.field_of_work }}</p>
-    <p>Date of registration: {{ user.date_of_birth }}</p>
+    <div class="profile_infos">
+      <p>Company: {{ user.username|slice:':98'|truncatechars:100 }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Activity: {{ user.field_of_work }}</p>
+      <p>Date of registration: {{ user.date_of_birth }}</p>
+    </div>
   {% endif %}
 
   {% if user.field_of_work == 'CUSTOMER' %}
@@ -22,13 +26,15 @@
   {% else %}
     <form action="{% url 'add_service' %}" method="post">
       {% csrf_token %}
-      <input type="submit" value="Add a service" />
+      <input type="submit" value="Add a service" class="service_button" />
     </form>
 
-    <h2>Created services:</h2>
-
-    {% for item in history %}
-      {% include './widgets/one_service_card.html' %}
-    {% endfor %}
+    <div class="created_services">
+      <h2>Created services:</h2>
+  
+      {% for item in history %}
+        {% include './widgets/one_service_card.html' %}
+      {% endfor %}
+    </div>
   {% endif %}
 {% endblock %}

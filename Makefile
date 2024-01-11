@@ -44,5 +44,4 @@ push:
 	git commit -m "$(Message)"
 	git push
 
-
-.PHONY: start migrate admin create-app test lint shell collectstatic makemessages compilemessages backup-db restore-db
+.PHONY: start migrate admin create-app test lint shell collectstatic makemessages compilemessages backup-db restore-db push
