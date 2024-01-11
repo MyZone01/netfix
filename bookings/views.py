@@ -16,6 +16,7 @@ def booking_view(request, service_id):
             booking = form.save(commit=False)
             booking.user = request.user 
             booking.price = service.price_per_hour * int(request.POST['hours'])
+            print(booking.price)
             booking.save()
             return redirect(reverse('profile'))
     else:

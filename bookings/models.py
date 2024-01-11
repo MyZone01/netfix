@@ -14,7 +14,7 @@ class Bookings(models.Model):
     address = models.TextField(max_length=300, null=False)
     booking_date = models.DateTimeField(default=datetime.now, null=False)
     price = models.DecimalField(
-        max_digits=8, decimal_places=2)  # service.price_per_hour * hours
+        max_digits=100, decimal_places=2)  # service.price_per_hour * hours
 
     def __str__(self):
         # according to the task these are the fields that must be displayed in services list
