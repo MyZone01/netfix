@@ -31,14 +31,12 @@
       <input type="submit" value="Add a service" class="service_button" />
     </form>
 
-    <div class="created_services">
       <h2>Created services:</h2>
       <div class="job-grid">
         {% for item in history %}
           {% include './widgets/one_service_card.html' %}
         {% endfor %}
       </div>
-    </div>
   {% endif %}
   </main>
 {% endblock %}
