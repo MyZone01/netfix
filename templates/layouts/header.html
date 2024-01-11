@@ -4,7 +4,6 @@ In exact this is the url "path('', views.home, name='home')"
 inside "base/urls.py urlpatterns" list of paths
 {% endcomment %}
 <header>
-  <a href="/most_requested">Most Request</a>
   <a href={% url 'home' %} class="logo">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
       <path xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +19,7 @@ inside "base/urls.py urlpatterns" list of paths
   </a>
   <nav>
     <a href={% url 'services' %} class="active">Find Job</a>
-    <a href="#" >Company Review</a>
+    <a href="/most_requested">Most Request</a>
     <a href="#" >Find Salaries</a>
   </nav>
   {% if user.is_authenticated %}
