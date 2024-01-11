@@ -1,5 +1,6 @@
 {% extends './layouts/main.html' %}
 {% block content %}
+<aside>
   <h1 class="profile">Profile Page</h1>
   {% if user.field_of_work == 'CUSTOMER' %}
     <div class="profile_infos">
@@ -16,7 +17,8 @@
       <p>Date of registration: {{ user.date_of_birth }}</p>
     </div>
   {% endif %}
-
+</aside>
+  <main>
   {% if user.field_of_work == 'CUSTOMER' %}
     <h2>Booked services:</h2>
 
@@ -31,10 +33,12 @@
 
     <div class="created_services">
       <h2>Created services:</h2>
-  
-      {% for item in history %}
-        {% include './widgets/one_service_card.html' %}
-      {% endfor %}
+      <div class="job-grid">
+        {% for item in history %}
+          {% include './widgets/one_service_card.html' %}
+        {% endfor %}
+      </div>
     </div>
   {% endif %}
+  </main>
 {% endblock %}
