@@ -1,8 +1,10 @@
 main {
+    margin-top: 70px;
     grid-column: 2 / -2;
     grid-row: 2 / -1;
     background-color: var(--theme-bg-color);
     display: flex;
+    align-items: center;
     flex-direction: column;
     flex-grow: 1;
     scroll-behavior: smooth;

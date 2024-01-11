@@ -58,33 +58,6 @@ a.active>span {
   color: var(--active-color);
 }
 
-.profile {
-  text-align: center;
-  position: absolute;
-  left: 50%;
-  top: 10%;
-  transform: translate(-50%);
-}
-
-.service_button {
-  position: absolute;
-  top: 20%;
-  right: 20%;
-  width: 200px;
-}
-
-.profile_infos {
-  position: absolute;
-  left: 10%;
-  top: 50%;
-}
-
-.created_services {
-  position: absolute;
-  background: red;
-  bottom: 40%;
-  right: 10%;
-}
 
 .add_services {
   overflow: auto !important;;

@@ -66,6 +66,7 @@ body {
 
 
 select,
+textarea,
 input {
   width: 50%;
   border-radius: 10px;
@@ -73,6 +74,10 @@ input {
   padding: 10px 15px;
   background-color: var(--active-light-color);
   color: var(--body-color);
+}
+
+textarea {
+  resize: none;
 }
 
 .btn,
@@ -134,14 +139,14 @@ a {
 }
 
 .float {
-  position: absolute;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--active-light-color);
   background-color: var(--active-color);
   border: none;
-  bottom: 0px;
+  bottom: 12px;
   cursor: pointer;
   left: 10px;
   width: 32px;
