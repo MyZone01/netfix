@@ -64,29 +64,12 @@ def home_view(request, service_field='ALL_IN_ONE'):
         services = Service.objects.filter(
             field=service_field).order_by('-created_date')
     convert_services_choices_to_verbose_names(services)
-    categories_count = Service.objects.count()
 
-    categories_count = {
-        'ALL_IN_ONE': 0,
-        'AIR_CONDITIONER': 0,
-        'CARPENTRY': 0,
-        # ('ELECTRICITY', 'Electricity'),
-        # ('GARDENING', 'Gardening'),
-        # ('HOME_MACHINES', 'Home Machines'),
-        # ('HOUSEKEEPING', 'Housekeeping'),
-        # ('INTERIOR_DESIGN', 'Interior Design'),
-        # ('LOCKS', 'Locks'),
-        # ('PAINTING', 'Painting'),
-        # ('PLUMBING', 'Plumbing'),
-        # ('WATER_HEATERS', 'Water Heaters'),
-    }
     services = Service.objects.all()
-    print(services)
     context = {
         'user': request.user,  # to manage navbar.html properly
         'services': services,
-        'field_verbose_dict': FILTER_CHOICES_DICT,
-        'categories_count': categories_count,
+        'field_verbose_dict': FILTER_CHOICES_DICT
     }
     return render(request, 'home.html', context)
 

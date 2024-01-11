@@ -6,9 +6,7 @@
       {% for field, verbose in field_verbose_dict.items %}
         <a href="{% url 'home_with_filter' field %}" class="type-container">
           <span>{{ verbose }}</span>
-          <span class="job-number">
-            {{ categories_count.field|default:"0" }}
-        </span>
+          <span class="job-number">x</span>
         </a>
       {% endfor %}
     </div>
