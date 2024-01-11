@@ -65,7 +65,6 @@ def home_view(request, service_field='ALL_IN_ONE'):
             field=service_field).order_by('-created_date')
     convert_services_choices_to_verbose_names(services)
 
-    services = Service.objects.all()
     context = {
         'user': request.user,  # to manage navbar.html properly
         'services': services,

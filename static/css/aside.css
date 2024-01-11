@@ -65,3 +65,12 @@ a.active>span {
   overflow: auto; /* Ajouter un défilement si nécessaire */
   text-align: center;
 }
+
+.profile_infos {
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.profile {
+  margin-left: 50px;
+}
