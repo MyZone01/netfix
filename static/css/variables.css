@@ -58,7 +58,6 @@ body {
   max-width: 1400px;
   height: calc(100vh - 30px);
   margin: 10px auto;
-  overflow: hidden;
   background-color: var(--body-bg-color);
   font-family: var(--body-font);
   font-size: 15px;
