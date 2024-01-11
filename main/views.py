@@ -6,6 +6,9 @@ from main.forms import CompanyCreationForm, CustomerCreationForm, UserLoginForm
 from django.contrib.auth import authenticate, login, logout
 from main.models import AppUser
 from service.models import Service
+from django.db.models import Count, Max
+from bookings.models import Bookings
+
 
 # Create your views here.
 
@@ -148,3 +151,9 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect(reverse('home'))
+
+def most_requested_view(request):
+    services = Service.objects.annotate(num_bookings=Count('bookings')).order_by('-num_bookings')
+
+    context = {'services': services}
+    return render(request, 'most_requested_services.html', context)
