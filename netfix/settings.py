@@ -25,7 +25,7 @@ SECRET_KEY = '4fd1a85ad9024512db9c319d389c0bbfa9ff82e67f7b0d996e43'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [""]
+ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'main.AppUser'
 
