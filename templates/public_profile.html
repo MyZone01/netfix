@@ -17,9 +17,11 @@
   {% else %}
     <h2>Created services:</h2>
 
+    <div class="job-grid">
     {% for item in history %}
       {% include './widgets/one_service_card.html' %}
     {% endfor %}
+    </div>
   {% endif %}
 </main>
 {% endblock %}
