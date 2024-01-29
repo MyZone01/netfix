@@ -79,17 +79,17 @@ python3 manage.py runserver
 10. Access the application in your web browser at `http://127.0.0.1:8000/`.
 
 ## FEATURES
-- User registration and login (both Company and Customer)
-- User profile pages displaying information and requested services
-- Service creation by Companies
-- Service listing by category and creation order
-- Service details page with company information
-- Service request submission by Customers
-- Most requested services page
-- Proper error handling and status pages
-- HTTPS secure connection
-- Rate limiting to prevent abuse
-- Encryption of client passwords and sessions
+- [x] User registration and login (both Company and Customer)
+- [x] User profile pages displaying information and requested services
+- [x] Service creation by Companies
+- [x] Service listing by category and creation order
+- [x] Service details page with company information
+- [x] Service request submission by Customers
+- [x] Most requested services page
+- [x] Proper error handling and status pages
+- [x] HTTPS secure connection
+- [ ] Rate limiting to prevent abuse
+- [x] Encryption of client passwords and sessions
 
 ## BUILT WITH
 - Django - The web framework used
